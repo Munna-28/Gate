@@ -240,7 +240,7 @@ ASSIGNEMNT-1 PROBABILITY
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
 Question 35.
-Suppose that ($X_1,X_2,X_3$) has $N_3(\mu,\Sigma)$ distrubution with 
+Suppose that ($\vec{X_1},\vec{X_2},\vec{X_3}$) has $N_3(\vec{\mu},\vec{\Sigma})$ distrubution with 
 $\mu = \begin{bmatrix}
 0 \\
 0\\
@@ -252,42 +252,31 @@ $\mu = \begin{bmatrix}
 1 & 1 & 1
 \end{bmatrix} \\ $ Given that $\phi(-0.5)$=0.3085, where $\phi(.)$ denotes the cumulative distribution function of a standard normal random variable, $P \brak{ \brak{X_1-2X_2+2X_3}^2 < \frac{7}{2} }$ equals to \\
 \solution \\
-Let $Y = X_1 - 2X_2 + 2X_3$ and a=$ \begin{bmatrix}
+Let $\vec{Y} = \vec{X_1}-\vec{2X_2}+\vec{2X_3}$ and $\vec{a}$=$ \begin{bmatrix}
 1 \\ -2 \\  2 
 \end{bmatrix}$
 \begin{align}
-\mu_Y &= \mathbf{a}^T \boldsymbol{\mu}  \\
+\mu_Y &= \vec{a}^T \vec{\mu}  \\
 &= \begin{bmatrix} 1 & -2 & 2 \end{bmatrix} \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}  \\
 &= 0 \\
-\sigma_Y^2 &= \mathbf{a}^T \boldsymbol{\Sigma} \mathbf{a} \\
+\sigma_Y^2 &= \vec{a}^T \vec{\Sigma} \vec{a} \\
 &= \begin{bmatrix} 1 & -2 & 2 \end{bmatrix} \begin{bmatrix} 2 & 2 & 1 \\ 2 & 5 & 1 \\ 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ -2 \\ 2 \end{bmatrix} \\
-&= 1 
-\end{align}
-
-\begin{align}
-\pr{(Y^2 < \frac{7}{2})} &= \pr{\left(-\sqrt{\frac{7}{2}} < Y < \sqrt{\frac{7}{2}}\right)}\\
-&= \Phi\left(\sqrt{\frac{7}{2}}\right) - \Phi\left(-\sqrt{\frac{7}{2}}\right).
-\end{align}
-
-\begin{align}
-\pr{\left(\left(X_1 - 2X_2 + 2X_3\right)^2 < \frac{7}{2}\right)} &= \Phi\left(\sqrt{\frac{7}{2}}\right) - \left( \Phi\left(-\sqrt{\frac{7}{2}}\right)\right)
-\end{align}
-\begin{align}
-\Phi(x) &= \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz
-\end{align}
-\begin{align}
-\Phi\left(\sqrt{\frac{7}{2}}\right) &= \int_{-\infty}^{\sqrt{\frac{7}{2}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz \\
+&= 1 \\ 
+\pr{Y^2 < \frac{7}{2}} &= \pr{-\sqrt{\frac{7}{2}} < Y < \sqrt{\frac{7}{2}}}\\
+&= \Phi\myvec{\sqrt{\frac{7}{2}}}- \Phi\myvec{-\sqrt{\frac{7}{2}}} \\
+\Phi(x) &= \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz \\
+\Phi\myvec{\sqrt{\frac{7}{2}}} &= \int_{-\infty}^{\sqrt{\frac{7}{2}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz \\
 &=\int_{-\infty}^{-\frac{1}{2}} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} +\int_{-\frac{1}{2}}^{\sqrt{\frac{7}{2}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz \\
 &= \Phi(-0.5)+ \int_{-\frac{1}{2}}^{\sqrt{\frac{7}{2}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz \\
 &=0.3085+0.66082 \\
 &=0.96932
 \end{align}
 \begin{align}
-\Phi\left(-\sqrt{\frac{7}{2}}\right) &= \int_{-\infty}^{-\sqrt{\frac{7}{2}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz \\
+\Phi\myvec{-\sqrt{\frac{7}{2}}} &= \int_{-\infty}^{-\sqrt{\frac{7}{2}}} \frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}} dz \\
 &=0.03068
 \end{align}
 \begin{align}
-\pr{\left(\left(X_1 - 2X_2 + 2X_3\right)^2 < \frac{7}{2}\right)} &= \Phi\left(\sqrt{\frac{7}{2}}\right) - \left( \Phi\left(-\sqrt{\frac{7}{2}}\right)\right) \\
+\pr{\myvec{X_1 - 2X_2 + 2X_3}^2 < \frac{7}{2}}&= \Phi\myvec{\sqrt{\frac{7}{2}}} - \ \Phi\myvec{-\sqrt{\frac{7}{2}}} \\
 &=0.96932-0.03068 \\
 &=0.93864
 \end{align}
