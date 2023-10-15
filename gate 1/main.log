@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  14 OCT 2023 12:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  15 OCT 2023 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1297,33 +1297,126 @@ Underfull \hbox (badness 3179) in paragraph at lines 242--258
 1/txr/m/n/12 ) has
  []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] (./main.aux)
+]
+LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 
+316.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+File: ot1txtt.fd 2000/12/15 v3.1
+)
+Overfull \hbox (7.50388pt too wide) detected at line 320
+[]
+ []
+
+
+Overfull \hbox (71.55077pt too wide) detected at line 326
+[] \OT1/txr/m/n/12 = [] \OMS/txsy/m/n/12 ^^@ []
+ []
+
+
+Overfull \hbox (37.79944pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 // Given mean vector and covariance matrix[] 
+ []
+
+
+Overfull \hbox (37.79944pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 // Coefficients for the linear combination[] 
+ []
+
+
+Overfull \hbox (132.29926pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 // Calculate mean and variance of $Y = X_1 - 2X_2 + 2X_3
+$[] 
+ []
+
+
+Overfull \hbox (107.0993pt too wide) in paragraph at lines 372--372
+[]            \OT1/txtt/m/n/12 sigma_Y_squared += a[i] * Sigma[i][j] * a[j];[] 
+
+ []
+
+
+Overfull \hbox (113.39929pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 // Calculate the probability using standard normal CDF[]
+ 
+ []
+
+
+Overfull \hbox (50.39941pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 double lower_bound = -sqrt(sigma_Y_squared);[] 
+ []
+
+
+Overfull \hbox (44.09943pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 double upper_bound = sqrt(sigma_Y_squared);[] 
+ []
+
+
+Overfull \hbox (251.99902pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 // Calculate cumulative probabilities using math.erf for
+ standard normal CDF[] 
+ []
+
+
+Overfull \hbox (144.89923pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 double lower_prob = 0.5 * (1 + erf(lower_bound / sqrt(2)
+));[] 
+ []
+
+
+Overfull \hbox (144.89923pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 double upper_prob = 0.5 * (1 + erf(upper_bound / sqrt(2)
+));[] 
+ []
+
+
+Overfull \hbox (6.2995pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 // Calculate the required probability[] 
+ []
+
+
+Overfull \hbox (69.29938pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 double required_prob = upper_prob - lower_prob;[] 
+ []
+
+
+Overfull \hbox (170.09918pt too wide) in paragraph at lines 372--372
+[]    \OT1/txtt/m/n/12 printf("P((X_1 - 2X_2 + 2X_3)^2 < 7/2) = %f\n", required
+_prob);[] 
+ []
+
+[2] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 7FC80349DC3EF8C40D17C24F1036F4BE;166.
  ) 
 Here is how much of TeX's memory you used:
- 30673 strings out of 478287
- 604966 string characters out of 5849290
- 890016 words of memory out of 5000000
- 48217 multiletter control sequences out of 15000+600000
- 540306 words of font info for 178 fonts, out of 8000000 for 9000
+ 30731 strings out of 478287
+ 605723 string characters out of 5849290
+ 902029 words of memory out of 5000000
+ 48254 multiletter control sequences out of 15000+600000
+ 541636 words of font info for 181 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,18n,96p,496b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,18n,96p,496b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
-onts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 52566 bytes).
+onts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmri8a.pfb>
+Output written on main.pdf (2 pages, 71386 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 117 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 36 named destinations out of 1000 (max. 500000)
+ 29 words of extra memory for PDF output out of 10000 (max. 10000000)
 
