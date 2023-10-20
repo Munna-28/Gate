@@ -1,5 +1,14 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+double generateRandomNormal() {
+    double u1 = rand() / (RAND_MAX + 1.0);
+    double u2 = rand() / (RAND_MAX + 1.0);
+    return sqrt(-2 * log(u1)) * cos(2 * M_PI * u2);
+}
 
 int main() {
     // Given mean vector and covariance matrix
@@ -10,6 +19,29 @@ int main() {
 
     // Coefficients for the linear combination
     double a[3] = {1, -2, 2};
+      // Number of samples for simulation
+    int num_samples = 1000000;
+    int count = 0;
+
+    // Generate random samples and evaluate the probability
+    for (int i = 0; i < num_samples; ++i) {
+        // Generate random samples for X1, X2, and X3
+        double X[3];
+        for (int j = 0; j < 3; ++j) {
+            X[j] = generateRandomNormal() * sqrt(Sigma[j][j]) + mu[j];
+        }
+
+        // Calculate Y = X1 - 2X2 + 2X3
+        double Y = 0;
+        for (int j = 0; j < 3; ++j) {
+            Y += a[j] * X[j];
+        }
+
+        // Check if Y^2 is less than 7/2
+        if (Y * Y < 7.0 / 2) {
+            count++;
+        }
+    }
 
     // Calculate mean and variance of Y = X1 - 2X2 + 2X3
     double mu_Y = 0;

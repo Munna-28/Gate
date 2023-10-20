@@ -280,96 +280,15 @@ Let $\vec{Y} = \vec{X_1}-\vec{2X_2}+\vec{2X_3}$ and $\vec{a}$=$ \begin{bmatrix}
 &=0.96932-0.03068 \\
 &=0.93864
 \end{align}
-\section{Theory}
-To calculate the probability $P((X_1 - 2X_2 + 2X_3)^2 < \frac{7}{2})$, where $X_1$, $X_2$, and $X_3$ are random variables with mean vector $\vec{\mu}$ = $[0, 0, 0]$ and covariance matrix $\Sigma$ given by:
-\[
-\Sigma = \begin{bmatrix}
-2 & 2 & 1 \\
-2 & 5 & 1 \\
-1 & 1 & 1 \\
-\end{bmatrix}
-\]
-and the coefficients for the linear combination $\vec{a} = [1, -2, 2]$, we can follow these steps:
-
+\section{Simulation Steps}
 \begin{enumerate}
-    \item Calculate Mean and Variance of $\vec{Y}$=$\vec{X_1}-\vec{2X_2}+\vec{2X_3}$  \\
-    The mean of $Y$, denoted as $\mu_Y$, is calculated as follows:
-    \begin{align}
-    \mu_Y &= \sum_{i=1}^{3} a_i \mu_i \\
-    &= 1 \times 0 + (-2) \times 0 + 2 \times 0 \\
-    &= 0
-    \end{align}
-    The variance of $Y$, denoted as $\sigma_Y^2$, is calculated using the formula:
-    \begin{align}
-    \sigma_Y^2 &= \sum_{i=1}^{3} \sum_{j=1}^{3} a_i \Sigma_{ij} a_j \\
-    &= 1
-    \end{align}
-    
-    \item Calculate Lower and Upper Bounds for Standard Normal Distribution \\
-    Using the variance $\sigma_Y^2$, calculate the lower and upper bounds for the standard normal distribution corresponding to $\frac{7}{2}$:
-    \begin{align}
-    \text{Lower Bound} &= -\sqrt{\frac{7}{2}} \\
-    \text{Upper Bound} &= \sqrt{\frac{7}{2}}
-    \end{align}
-    
-    \item Calculate Cumulative Probabilities Using Standard Normal CDF \\
-    Calculate the cumulative probabilities for the lower and upper bounds using the error function (\texttt{erf}) and the standard normal cumulative distribution function (CDF) formula:
-    \begin{align}
-    \text{Lower Probability} &= \frac{1}{2} \left(1 + \text{erf}\left(\frac{\text{Lower Bound}}{\sqrt{2}}\right)\right) \\
-    \text{Upper Probability} &= \frac{1}{2} \left(1 + \text{erf}\left(\frac{\text{Upper Bound}}{\sqrt{2}}\right)\right)
-    \end{align}
-    
-    \item Calculate Required Probability \\
-    Calculate the required probability by subtracting the lower probability from the upper probability:
-    \[
-    \text{Required Probability} = \text{Upper Probability} - \text{Lower Probability}
-    \]
+    \item Generate Random Samples: Generate random samples for $X_1$, $X_2$, and $X_3$ from the given multivariate normal distribution with mean vector $\vec{\mu} = [0, 0, 0]$ and covariance matrix $\Sigma$.
+    \item Calculate $Y$: Calculate $Y = X_1 - 2X_2 + 2X_3$.
+    \item Count Samples: Count the number of samples for which $Y^2 < \frac{7}{2}$.
+    \item Calculate Estimated Probability: Calculate the estimated probability by dividing the count by the total number of samples ($1000000$).
 \end{enumerate}
 
-\section{Simulation}
 
-The given C code calculates and prints the required probability using the calculated lower and upper probabilities.
-
-\begin{verbatim}
-#include <stdio.h>
-#include <math.h>
-
-int main() {
-    // Given mean vector and covariance matrix
-    double mu[3] = {0, 0, 0};
-    double Sigma[3][3] = {{2, 2, 1},
-                          {2, 5, 1},
-                          {1, 1, 1}};
-
-    // Coefficients for the linear combination
-    double a[3] = {1, -2, 2};
-
-    // Calculate mean and variance of $Y = X_1 - 2X_2 + 2X_3$
-    double mu_Y = 0;
-    double sigma_Y_squared = 0;
-    for (int i = 0; i < 3; ++i) {
-        mu_Y += a[i] * mu[i];
-        for (int j = 0; j < 3; ++j) {
-            sigma_Y_squared += a[i] * Sigma[i][j] * a[j];
-        }
-    }
-
-    // Calculate the probability using standard normal CDF
-    double lower_bound = -sqrt(sigma_Y_squared);
-    double upper_bound = sqrt(sigma_Y_squared);
-
-    // Calculate cumulative probabilities using math.erf for standard normal CDF
-    double lower_prob = 0.5 * (1 + erf(lower_bound / sqrt(2)));
-    double upper_prob = 0.5 * (1 + erf(upper_bound / sqrt(2)));
-
-    // Calculate the required probability
-    double required_prob = upper_prob - lower_prob;
-
-    printf("P((X_1 - 2X_2 + 2X_3)^2 < 7/2) = %f\n", required_prob);
-
-    return 0;
-}
-\end{verbatim}
 \end{document}
 
 
